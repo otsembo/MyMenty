@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="general_category"
+        app:title="General">
+
+        <ListPreference
+            app:key="language"
+            app:title="LANGUAGE"
+            android:entries="@array/language_preference"
+            android:entryValues="@array/language_preference"/>
+
+        <CheckBoxPreference
+            app:key="reset_progress"
+            app:title="RESET PROGRESS EVERY WEEK"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="notifications_category"
+        app:title="Notifications">
+
+        <SwitchPreferenceCompat
+            app:key="system_sounds"
+            app:title="USE SYSTEM SOUNDS"
+            app:summary="Use your default phone sounds for notifications"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="about_app"
+        app:title="About App">
+
+        <Preference
+            app:key="about"
+            app:summary="Are you using the latest version?"
+            app:title="APP VERSION"/>
+
+        <Preference
+            app:key="app_creators"
+            app:summary="Get in touch with us."
+            app:title="APP CREATOR"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

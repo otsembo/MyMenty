@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.eeyan.mymenty.presentation.main.home.Home"
+        android:label="Home"
+        tools:layout="@layout/main_home"/>
+    <fragment
+        android:id="@+id/search"
+        android:name="com.eeyan.mymenty.presentation.main.search.Search"
+        android:label="Search"
+        tools:layout="@layout/main_search"/>
+    <fragment
+        android:id="@+id/stats"
+        android:name="com.eeyan.mymenty.presentation.main.stats.Stats"
+        android:label="Stats"
+        tools:layout="@layout/main_stats"/>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.eeyan.mymenty.presentation.main.profile.Profile"
+        android:label="Profile"
+        tools:layout="@layout/main_profile"/>
+    <fragment
+        android:id="@+id/appSettings"
+        android:name="com.eeyan.mymenty.presentation.main.settings.AppSettings"
+        android:label="AppSettings"
+        />
+
+</navigation>

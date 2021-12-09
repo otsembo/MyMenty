@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/home_"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:title="@string/search_"
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        />
+
+    <item
+        android:title="@string/stats_"
+        android:id="@+id/stats"
+        android:icon="@drawable/ic_graph"
+        />
+
+    <item
+        android:title="@string/profile_"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_account"
+        />
+
+    <item
+        android:title="@string/settings_"
+        android:id="@+id/appSettings"
+        android:icon="@drawable/ic_settings"
+        />
+
+</menu>

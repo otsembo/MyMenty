@@ -11,4 +11,16 @@
     <string name="get_some_help">GET SOME HELP</string>
     <string name="sleep_data">SLEEP DATA</string>
     <string name="personal_time">PERSONAL TIME</string>
+    <string name="home_">Home</string>
+    <string name="search_">Search</string>
+    <string name="stats_">Stats</string>
+    <string name="profile_">Profile</string>
+    <string name="settings_">Settings</string>
+
+    <array name="language_preference">
+        <item>ENGLISH, UK</item>
+        <item>ENGLISH, USA</item>
+        <item>SWAHILI</item>
+    </array>
+
 </resources>
