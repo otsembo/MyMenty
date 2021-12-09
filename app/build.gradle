@@ -98,6 +98,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.3'
 
+    //graphs
+    implementation 'com.aghajari.graphview:AXGraphView:1.0.2'
+
+    //circle images
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 
 }
 

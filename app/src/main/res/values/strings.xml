@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MyMenty</string>
+    <string name="add_email">EMAIL ADDRESS</string>
+    <string name="your_password">PASSWORD</string>
+    <string name="new_here">I DO NOT HAVE AN ACCOUNT</string>
+    <string name="add_a_cool_username">ADD A COOL USERNAME</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="already_have_an_account_login_instead">ALREADY HAVE AN ACCOUNT? LOGIN INSTEAD</string>
+    <string name="daily_tips">DAILY TIPS</string>
+    <string name="let_s_go">LET US GO</string>
+    <string name="get_some_help">GET SOME HELP</string>
+    <string name="sleep_data">SLEEP DATA</string>
+    <string name="personal_time">PERSONAL TIME</string>
 </resources>
