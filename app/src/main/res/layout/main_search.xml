@@ -46,7 +46,7 @@
                     android:layout_weight="5"
                     android:background="@color/white"
                     android:hint="@string/get_some_help"
-                    android:padding="@dimen/edt_auth_padd" />
+                    android:padding="10.5dp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgSearch"

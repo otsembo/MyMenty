@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.eeyan.mymenty.R
 import com.eeyan.mymenty.databinding.ActivityAuthenticationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Authentication : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthenticationBinding

@@ -9,7 +9,11 @@
         android:id="@+id/home"
         android:name="com.eeyan.mymenty.presentation.main.home.Home"
         android:label="Home"
-        tools:layout="@layout/main_home"/>
+        tools:layout="@layout/main_home">
+        <action
+            android:id="@+id/action_home_to_authentication"
+            app:destination="@id/authentication" />
+    </fragment>
     <fragment
         android:id="@+id/search"
         android:name="com.eeyan.mymenty.presentation.main.search.Search"
@@ -30,5 +34,10 @@
         android:name="com.eeyan.mymenty.presentation.main.settings.AppSettings"
         android:label="AppSettings"
         />
+    <activity
+        android:id="@+id/authentication"
+        android:name="com.eeyan.mymenty.presentation.auth.Authentication"
+        android:label="activity_authentication"
+        tools:layout="@layout/activity_authentication" />
 
 </navigation>
