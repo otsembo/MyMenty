@@ -6,4 +6,6 @@ interface HealthRepository {
 
     suspend fun getHealthTips(): MentalHealthData
 
+    suspend fun searchTips(query:String) : MentalHealthData
+
 }

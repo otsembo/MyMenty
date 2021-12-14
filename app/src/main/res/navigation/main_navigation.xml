@@ -13,12 +13,19 @@
         <action
             android:id="@+id/action_home_to_authentication"
             app:destination="@id/authentication" />
+        <action
+            android:id="@+id/action_home_to_detailsPage"
+            app:destination="@id/detailsPage" />
     </fragment>
     <fragment
         android:id="@+id/search"
         android:name="com.eeyan.mymenty.presentation.main.search.Search"
         android:label="Search"
-        tools:layout="@layout/main_search"/>
+        tools:layout="@layout/main_search">
+        <action
+            android:id="@+id/action_search_to_detailsPage"
+            app:destination="@id/detailsPage" />
+    </fragment>
     <fragment
         android:id="@+id/stats"
         android:name="com.eeyan.mymenty.presentation.main.stats.Stats"
@@ -39,5 +46,15 @@
         android:name="com.eeyan.mymenty.presentation.auth.Authentication"
         android:label="activity_authentication"
         tools:layout="@layout/activity_authentication" />
+    <fragment
+        android:id="@+id/detailsPage"
+        android:name="com.eeyan.mymenty.presentation.main.details.DetailsPage"
+        android:label="DetailsPage"
+        tools:layout="@layout/main_home_webview">
+        <argument
+            android:name="accessUrl"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

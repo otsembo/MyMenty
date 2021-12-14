@@ -26,5 +26,5 @@ data class Resource(
 )
 //convert to health tip
 fun Resource.getHealthTip() : HealthTip{
-    return HealthTip(id = Id, title = Title, desc = MyHFDescription, image = ImageUrl)
+    return HealthTip(id = Id, title = Title, desc = MyHFDescription, image = ImageUrl, url = AccessibleVersion)
 }

@@ -72,6 +72,18 @@
             android:layout_marginTop="32dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
+        <androidx.fragment.app.FragmentContainerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.eeyan.mymenty.presentation.components.NothingFound"
+            android:id="@+id/fragNothingFound"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardSearch"
+            android:visibility="gone"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

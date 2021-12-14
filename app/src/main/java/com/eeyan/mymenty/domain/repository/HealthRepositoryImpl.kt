@@ -13,4 +13,10 @@ class HealthRepositoryImpl
     override suspend fun getHealthTips(): MentalHealthData {
         return api.getTopData()
     }
+
+    override suspend fun searchTips(query: String): MentalHealthData {
+        return api.getSearchData(query)
+    }
+
+
 }

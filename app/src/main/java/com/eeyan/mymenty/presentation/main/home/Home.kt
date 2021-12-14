@@ -13,6 +13,7 @@ import com.eeyan.mymenty.databinding.MainHomeBinding
 import com.eeyan.mymenty.di.AppModule
 import com.eeyan.mymenty.domain.model.HealthTip
 import com.eeyan.mymenty.presentation.main.home.adapters.HealthTipAdapter
+import com.eeyan.mymenty.presentation.main.home.adapters.MenuOptionsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,6 +24,8 @@ class Home : Fragment() {
     private val viewModel:HomeVM by viewModels()
 
     private lateinit var healthTipAdapter:HealthTipAdapter
+
+    private lateinit var optionsAdapter: MenuOptionsAdapter
 
     private lateinit var mCtx:FragmentActivity
 
@@ -36,12 +39,16 @@ class Home : Fragment() {
 
         mCtx = requireActivity()
 
+
         if(AppModule.getFirebaseAuth().currentUser == null){
             Navigation.findNavController(view).navigate(R.id.action_home_to_authentication)
             mCtx.finish()
         }
 
         initObservers()
+
+        optionsAdapter = MenuOptionsAdapter(viewModel.optionsList)
+        binding.rvMenuOptions.adapter = optionsAdapter
     }
 
     //init observers

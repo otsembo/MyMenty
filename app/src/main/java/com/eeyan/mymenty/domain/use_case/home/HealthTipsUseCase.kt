@@ -21,9 +21,9 @@ class HealthTipsUseCase
 
                 emit(Resource.Loading<List<HealthTip>>())
 
-                val healthTip = healthRepository.getHealthTips().Result.Resources.getHealthTips()
+                val healthTip = healthRepository.getHealthTips().Result.Resources?.getHealthTips()
 
-                emit(Resource.Success<List<HealthTip>>(data = healthTip))
+                emit(Resource.Success<List<HealthTip>>(data = healthTip?: ArrayList<HealthTip>()))
 
             }catch (e: IOException){
 

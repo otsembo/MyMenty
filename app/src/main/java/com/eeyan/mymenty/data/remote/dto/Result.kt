@@ -4,6 +4,6 @@ data class Result(
     val Error: String,
     val Language: String,
     val Query: Query,
-    val Resources: Resources,
+    val Resources: Resources? = null,
     val Total: Int
 )

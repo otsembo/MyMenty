@@ -5,6 +5,7 @@ import com.eeyan.mymenty.data.remote.HealthGovApi
 import com.eeyan.mymenty.data.repository.HealthRepository
 import com.eeyan.mymenty.domain.repository.AuthRepository
 import com.eeyan.mymenty.domain.repository.HealthRepositoryImpl
+import com.eeyan.mymenty.domain.use_case.home.MenuOptionsUseCase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -54,6 +55,13 @@ object AppModule {
     @Singleton
     fun getHealthRepository(api: HealthGovApi) : HealthRepository{
         return HealthRepositoryImpl(api)
+    }
+
+
+    @Provides
+    @Singleton
+    fun getOptionsMenuUseCase() : MenuOptionsUseCase{
+        return MenuOptionsUseCase()
     }
 
 }

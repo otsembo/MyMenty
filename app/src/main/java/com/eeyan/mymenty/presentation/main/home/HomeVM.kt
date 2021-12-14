@@ -7,7 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.eeyan.mymenty.common.BaseState
 import com.eeyan.mymenty.common.resource.Resource
 import com.eeyan.mymenty.domain.model.HealthTip
+import com.eeyan.mymenty.domain.model.HomeMenu
 import com.eeyan.mymenty.domain.use_case.home.HealthTipsUseCase
+import com.eeyan.mymenty.domain.use_case.home.MenuOptionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -16,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeVM
     @Inject
-    constructor(private val healthTipsUseCase: HealthTipsUseCase) : ViewModel(){
+    constructor(private val healthTipsUseCase: HealthTipsUseCase,
+                menuOptionsUseCase: MenuOptionsUseCase) : ViewModel(){
 
         //health tips state
         private var state:BaseState<List<HealthTip>> = BaseState()
@@ -24,8 +27,18 @@ class HomeVM
         private val _tipsState:MutableLiveData<BaseState<List<HealthTip>>> = MutableLiveData()
         val tipsState:LiveData<BaseState<List<HealthTip>>> = _tipsState
 
+        //options menu
+        private lateinit var _optionsList: ArrayList<HomeMenu.Options>
+        val optionsList
+            get() = _optionsList
+
+
         init {
+
             getTips()
+
+            _optionsList = menuOptionsUseCase()
+
         }
 
         private fun getTips(){
