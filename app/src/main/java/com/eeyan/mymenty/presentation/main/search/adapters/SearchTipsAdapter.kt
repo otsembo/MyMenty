@@ -1,10 +1,13 @@
 package com.eeyan.mymenty.presentation.main.search.adapters
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.eeyan.mymenty.R
+import com.eeyan.mymenty.common.constants.Constants
 import com.eeyan.mymenty.databinding.RowSearchBinding
 import com.eeyan.mymenty.domain.model.HealthTip
 
@@ -29,6 +32,11 @@ class SearchTipsAdapter (private val healthTips: List<HealthTip>) : RecyclerView
             binding.txtSearchTip.text = tip.title
             binding.imgTip.load(tip.image){
                 placeholder(R.drawable.ic_tip_placeholder)
+            }
+            binding.root.setOnClickListener {
+                val dataBundle = Bundle()
+                dataBundle.putString(Constants.WEB_DETAILS, tip.url)
+                Navigation.findNavController(it).navigate(R.id.action_search_to_detailsPage, dataBundle)
             }
         }
 

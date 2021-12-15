@@ -38,7 +38,7 @@
                 android:layout_width="10dp"
                 android:layout_height="100dp"
                 app:civ_border_width="2dp"
-                tools:src="@tools:sample/avatars"
+                android:src="@drawable/ic_default_user"
                 android:layout_weight="1"
                 android:id="@+id/imgProfile"
                 app:civ_border_color="@color/white"/>

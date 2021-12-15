@@ -6,7 +6,7 @@
     android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="@dimen/cardview_default_elevation"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="5dp"
     android:layout_margin="5dp">
 
     <FrameLayout
@@ -25,7 +25,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparent_50"/>
+            android:background="@color/transparent_30"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
