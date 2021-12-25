@@ -35,7 +35,11 @@
         android:id="@+id/profile"
         android:name="com.eeyan.mymenty.presentation.main.profile.Profile"
         android:label="Profile"
-        tools:layout="@layout/main_profile"/>
+        tools:layout="@layout/main_profile">
+        <action
+            android:id="@+id/action_profile_to_authentication"
+            app:destination="@id/authentication" />
+    </fragment>
     <fragment
         android:id="@+id/appSettings"
         android:name="com.eeyan.mymenty.presentation.main.settings.AppSettings"

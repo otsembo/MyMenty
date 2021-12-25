@@ -1,8 +1,8 @@
 package com.eeyan.mymenty.domain.model
 
 data class User(
-    val id:String,
-    val email:String,
-    val imageUrl:String?,
-    val username:String
+    val id:String? = null,
+    val email:String? = null,
+    val imageUrl:String? = null,
+    val username:String? = null
 )
