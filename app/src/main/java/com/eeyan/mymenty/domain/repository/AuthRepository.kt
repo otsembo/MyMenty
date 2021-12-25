@@ -78,9 +78,7 @@ class AuthRepository
                     }
                 )
 
-                awaitClose {
-
-                }
+                awaitClose {}
 
             }
 

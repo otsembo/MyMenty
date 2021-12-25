@@ -4,7 +4,6 @@ import com.eeyan.mymenty.R
 
 object HomeMenu {
 
-
     data class Options(val img:Int, val title:String)
 
     fun getOptionsList() : ArrayList<Options>{

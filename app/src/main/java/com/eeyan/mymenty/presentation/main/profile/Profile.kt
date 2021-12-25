@@ -8,8 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import coil.load
 import com.eeyan.mymenty.R
+import com.eeyan.mymenty.common.constants.Constants
 import com.eeyan.mymenty.databinding.MainProfileBinding
+import com.eeyan.mymenty.domain.model.ProfileMenu
+import com.eeyan.mymenty.presentation.main.profile.adapters.ProfileMenuAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +25,10 @@ class Profile : Fragment(){
 
     private val mCtx:FragmentActivity by lazy {
         requireActivity()
+    }
+
+    private val adapter:ProfileMenuAdapter by lazy {
+        ProfileMenuAdapter(ProfileMenu.getProfileOptions())
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -44,6 +52,9 @@ class Profile : Fragment(){
             Navigation.findNavController(it).navigate(R.id.action_profile_to_authentication)
             mCtx.finish()
         }
+
+        binding.rvProfileOptions.adapter = adapter
+
     }
 
     private fun initObservers(){
@@ -53,6 +64,13 @@ class Profile : Fragment(){
                 it?.data?.let { user ->
                     binding.txtProfileName.text = user.username
                     binding.txtProfileEmail.text = user.email
+
+                    user.imageUrl?.let {
+                        binding.imgProfile.load(
+                            user.imageUrl
+                        )
+                    }
+
                 }
 
             }
