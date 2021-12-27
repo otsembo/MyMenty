@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.eeyan.mymenty.R
+import com.eeyan.mymenty.common.constants.Constants
 import com.eeyan.mymenty.databinding.RowProfileOptionsBinding
 import com.eeyan.mymenty.domain.model.ProfileMenu
 import com.eeyan.mymenty.presentation.main.profile.ProfileVM
+import com.google.android.material.snackbar.Snackbar
 
 class ProfileMenuAdapter
     (private val profileOptions:ArrayList<ProfileMenu.ProfileOptions>) : RecyclerView.Adapter<ProfileMenuAdapter.ProfileVH>(){
@@ -31,6 +33,9 @@ class ProfileMenuAdapter
                 option.icon
             )
             binding.txtProfileMenuTitle.text = option.title
+            binding.root.setOnClickListener {
+                Constants.snackIt(it, Constants.SOON)
+            }
         }
     }
 }

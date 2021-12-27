@@ -42,6 +42,8 @@ class DetailsPage : Fragment() {
         val url:String = args?.get(Constants.WEB_DETAILS) as String
         setUpWebView(url)
 
+//        DetailsPageArgs.fromBundle(requireArguments())
+
     }
 
 
