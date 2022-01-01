@@ -39,7 +39,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtAppTitle1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal"
+            tools:listitem="@layout/row_daily_tips"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtAppTitle2"
@@ -60,6 +61,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtAppTitle2"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
+            tools:listitem="@layout/row_menu_options"
             />
 
         <ProgressBar
