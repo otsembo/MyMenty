@@ -26,9 +26,9 @@ The application has been built using the following:
 ## Screenshots
 Take a peek at what am working on
 
-MAIN SCREEN | AUTH SCREEN | SETTINGS PAGE | LOADER
------------ | ----------- | ------------- | ------
-<img src="images/main.jpg" width="150"/> | <img src="images/auth.jpg" width="150"/> | <img src="images/settings.jpg" width="150"/> | <img src="images/loader.jpg" width="150"/> | 
+MAIN SCREEN | AUTH SCREEN | SETTINGS PAGE | LOADER | SEARCH PAGE |
+----------- | ----------- | ------------- | ------ | ----------- |
+<img src="images/main.jpg" width="150"/> | <img src="images/auth.jpg" width="150"/> | <img src="images/settings.jpg" width="150"/> | <img src="images/loader.jpg" width="150"/> | <img src="images/search.jpg" width="150"/> |
 
 
 ## LICENSE
