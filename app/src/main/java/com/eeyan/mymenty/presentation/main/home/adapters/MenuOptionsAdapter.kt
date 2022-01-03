@@ -1,7 +1,9 @@
 package com.eeyan.mymenty.presentation.main.home.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -38,14 +40,24 @@ class MenuOptionsAdapter(private val optionsList:ArrayList<HomeMenu.Options>)
                     when(position){
                         0 -> {
                             val myAction = HomeDirections.actionHomeToAppTimer(timerMode = 0)
-                            Navigation.findNavController(it).navigate(myAction)
+                            navigate(it, myAction)
                         }
-                        1 -> {}
-                        2 -> {}
+                        1 -> {
+
+                        }
+                        2 -> {
+                            val myAction = HomeDirections.actionHomeToAppTimer(timerMode = 1)
+                            navigate(it, myAction)
+                        }
                         3 -> {}
                     }
                 }
 
+            }
+
+
+            private fun navigate(mView:View, action:NavDirections){
+                Navigation.findNavController(mView).navigate(action)
             }
 
     }

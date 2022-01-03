@@ -28,7 +28,7 @@ class AppTimerVM
     fun startTimer(){
         appTimer = object : CountDownTimer(time, INTERVAL){
             override fun onTick(p0: Long) {
-                _timeData.value = DateUtils.formatElapsedTime(p0)
+                _timeData.value = formatTime(p0)
             }
 
             override fun onFinish() {
@@ -44,6 +44,11 @@ class AppTimerVM
     fun restartTimer(){
         stopTimer()
         startTimer()
+    }
+
+    //format time
+    private fun formatTime(ms:Long) : String{
+        return DateUtils.formatElapsedTime(ms / 1000)
     }
 
     companion object {

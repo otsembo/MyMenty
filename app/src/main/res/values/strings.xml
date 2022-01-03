@@ -17,6 +17,7 @@
     <string name="profile_">Profile</string>
     <string name="settings_">Settings</string>
     <string name="nothing_found">Your search did not yield any results. Please try something differnt! Sorry for the incovenience.</string>
+    <string name="save">SAVE</string>
 
     <array name="language_preference">
         <item>ENGLISH, UK</item>
