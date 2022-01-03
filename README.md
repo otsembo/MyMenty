@@ -28,7 +28,7 @@ Take a peek at what am working on
 
 MAIN SCREEN | AUTH SCREEN | SETTINGS PAGE | LOADER
 ----------- | ----------- | ------------- | ------
-<img src="images/main.png" width="150"/> | <img src="images/auth.png" width="150"/> | <img src="images/settings.png" width="150"/> | <img src="images/loader.png" width="150"/> | 
+<img src="images/main.jpg" width="150"/> | <img src="images/auth.jpg" width="150"/> | <img src="images/settings.jpg" width="150"/> | <img src="images/loader.jpg" width="150"/> | 
 
 
 ## LICENSE
