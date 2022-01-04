@@ -3,6 +3,7 @@ package com.eeyan.mymenty.common.constants
 import android.view.View
 import com.eeyan.mymenty.R
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
 
 object Constants {
 
@@ -21,9 +22,18 @@ object Constants {
 
     const val TIMER_DIALOG_TITLE = "SET TIME"
 
+    const val HR_IN_MS = (60 * 60 * 1000)
+    const val MIN_IN_MS = (60 * 1000)
+
     //snack bar
     fun snackIt(view:View, msg:String){
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
     }
+
+    fun getMinAndHr() : Pair<Int, Int> {
+        val cal = Calendar.getInstance()
+        return Pair(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE))
+    }
+
 
 }

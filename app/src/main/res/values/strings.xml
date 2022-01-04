@@ -18,6 +18,7 @@
     <string name="settings_">Settings</string>
     <string name="nothing_found">Your search did not yield any results. Please try something differnt! Sorry for the incovenience.</string>
     <string name="save">SAVE</string>
+    <string name="take_time_to_refresh_and_reload">Take time to refresh and reload</string>
 
     <array name="language_preference">
         <item>ENGLISH, UK</item>
