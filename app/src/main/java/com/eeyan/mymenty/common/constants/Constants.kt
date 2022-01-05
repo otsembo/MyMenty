@@ -7,6 +7,8 @@ import java.util.*
 
 object Constants {
 
+    const val DB_NAME: String = "MyMenty"
+
     //api
     const val BASE_URL = "https://health.gov/myhealthfinder/api/v3/"
 

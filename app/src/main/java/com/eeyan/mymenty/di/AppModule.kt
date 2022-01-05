@@ -1,6 +1,10 @@
 package com.eeyan.mymenty.di
 
+import android.content.Context
+import androidx.room.Room
 import com.eeyan.mymenty.common.constants.Constants
+import com.eeyan.mymenty.data.local.dao.HealthTipDao
+import com.eeyan.mymenty.data.local.database.MyMentyDatabase
 import com.eeyan.mymenty.data.remote.HealthGovApi
 import com.eeyan.mymenty.data.repository.HealthRepository
 import com.eeyan.mymenty.domain.repository.AuthRepository
@@ -13,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,19 +28,16 @@ import javax.inject.Singleton
 object AppModule {
 
     @Provides
-    @Singleton
     fun getFirebaseAuth() : FirebaseAuth{
         return FirebaseAuth.getInstance()
     }
 
     @Provides
-    @Singleton
     fun getFirebaseUser(mAuth: FirebaseAuth) : FirebaseUser?{
         return mAuth.currentUser
     }
 
     @Provides
-    @Singleton
     fun getDbReference() : DatabaseReference{
         return FirebaseDatabase.getInstance().reference
     }
@@ -53,8 +55,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun getHealthRepository(api: HealthGovApi) : HealthRepository{
-        return HealthRepositoryImpl(api)
+    fun getHealthRepository(api: HealthGovApi, db:MyMentyDatabase, dao: HealthTipDao) : HealthRepository{
+        return HealthRepositoryImpl(api, db, dao)
     }
 
 
@@ -62,6 +64,19 @@ object AppModule {
     @Singleton
     fun getOptionsMenuUseCase() : MenuOptionsUseCase{
         return MenuOptionsUseCase()
+    }
+
+    @Provides
+    @Singleton
+    fun getAppDatabase(@ApplicationContext mCtx:Context) : MyMentyDatabase{
+        return Room.databaseBuilder(
+            mCtx, MyMentyDatabase::class.java, Constants.DB_NAME
+        ).enableMultiInstanceInvalidation().build()
+    }
+
+    @Provides
+    fun getTipDao(db: MyMentyDatabase) : HealthTipDao{
+        return db.healthTipDao()
     }
 
 }
