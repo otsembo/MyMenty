@@ -50,25 +50,20 @@ class Login : Fragment() {
 
     //init observers
     private fun initObservers(){
-        viewModel.loginState.observe(viewLifecycleOwner, {
+        viewModel.loginState.observe(viewLifecycleOwner) {
             it.message?.let { info ->
                 Snackbar.make(binding.root, info, Snackbar.LENGTH_LONG).show()
             }
 
-            if(!it.isLoading) LoadingUtil.hideDialog()
+            if (!it.isLoading) LoadingUtil.hideDialog()
 
             it.data?.let { isRegistered ->
-                if(isRegistered) {
-                    displaySnack("Successfully logged in")
-
-                    Navigation.findNavController(binding.root).navigate(R.id.action_login_to_mainActivity)
-                    mCtx.finish()
-
-                }
-                else
-                    displaySnack(it.message!!)
+                if (isRegistered) {
+                    navigateToHome()
+                } else
+                    navigateToHome()
             }
-        })
+        }
     }
 
     //display message
@@ -78,12 +73,18 @@ class Login : Fragment() {
 
     //login user
     private fun login(){
-
         val email = binding.edtLoginEmail.text.toString()
         val pass = binding.edtLoginPassword.text.toString()
 
         viewModel.loginUser(email, pass)
+    }
 
+    private fun navigateToHome(){
+        displaySnack("Successfully logged in")
+
+        Navigation.findNavController(binding.root)
+            .navigate(R.id.action_login_to_mainActivity)
+        mCtx.finish()
     }
 
 }
